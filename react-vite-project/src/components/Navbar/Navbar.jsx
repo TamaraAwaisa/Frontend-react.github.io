@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,9 +19,10 @@ const pages = ['Bouquets', 'Baskets', 'Vases'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [anchorElAddToCart, setAnchorElAddToCart] = React.useState(0);
+
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
+    const [anchorElAddToCart, setAnchorElAddToCart] = useState(0);
 
     const handleClickAddToCart = () => {
         setAnchorElAddToCart(anchorElAddToCart + 1);
@@ -112,7 +113,7 @@ function Navbar() {
                 <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        <Avatar alt="Tamara Awaisa" src="/static/images/avatar/2.jpg" />
+                        <Avatar alt="Tamara Awaisa" src="img.jpg" />
                     </IconButton>
                     </Tooltip>
                     <Menu
