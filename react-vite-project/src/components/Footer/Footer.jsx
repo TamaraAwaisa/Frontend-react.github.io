@@ -1,11 +1,10 @@
-import { Container, Typography } from '@mui/material'
-import { Component } from 'react'
+import { Container, Typography } from '@mui/material';
 
-export default class Footer extends Component {
-    render() {
-        const footerStyle = {
-            color:'gray',
-        }
+function Footer() {
+    
+    const footerStyle = {
+        color:'gray',
+    }
     return (
         <>
         <footer style={{padding: '40px'}}>
@@ -17,5 +16,5 @@ export default class Footer extends Component {
         </footer>
         </>
     )
-    }
 }
+export default Footer;
