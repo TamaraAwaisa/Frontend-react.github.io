@@ -15,7 +15,7 @@ export const handlers = [
     //   return surprise;
     // }
 
-    return HttpResponse.json({ data: appendTypeToData(allData[params.type], params.type) })
+    return HttpResponse.json({ data: { ...allData[params.type], data: appendTypeToData(allData[params.type].data, params.type) } })
   }),
 
   http.get('/data', async () => {
