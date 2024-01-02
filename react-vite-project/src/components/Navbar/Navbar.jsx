@@ -15,8 +15,18 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
+
 const pages = ['Bouquets', 'Baskets', 'Vases'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+    '& .MuiBadge-badge': {
+        right: -3,
+        top: 13,
+        border: `2px solid ${theme.palette.background.paper}`,
+        padding: '0 4px',
+    },
+}));
 
 function Navbar() {
 
@@ -44,17 +54,9 @@ function Navbar() {
         setAnchorElUser(null);
     };
 
-    const StyledBadge = styled(Badge)(({ theme }) => ({
-        '& .MuiBadge-badge': {
-            right: -3,
-            top: 13,
-            border: `2px solid ${theme.palette.background.paper}`,
-            padding: '0 4px',
-        },
-        }));
-
     return (
         <>
+        <Box sx={{ display: 'flex' }}>
         <AppBar position="fixed" sx={{ backgroundColor: 'white' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -147,6 +149,7 @@ function Navbar() {
                 </Toolbar>
             </Container>
         </AppBar>
+        </Box>
         </>
     );
 }
