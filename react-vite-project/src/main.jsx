@@ -5,7 +5,7 @@ import './index.css'
 
 async function enableMocking() {
   const { worker } = await import('./mocks')
-  return worker.start({ quiet: true })
+  return worker.start({ quiet: true, onUnhandledRequest: () => { /* supress console warnings */ } })
 }
 
 enableMocking().then(() => ReactDOM.createRoot(document.getElementById('root')).render(
